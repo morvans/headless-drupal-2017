@@ -4,10 +4,11 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<title>reveal.js</title>
+		<title>Headless Drupal</title>
 
 		<link rel="stylesheet" href="css/reveal.css">
         <link rel="stylesheet" href="css/theme/night.css">
+        <link rel="stylesheet" href="css/font-awesome.min.css">
 
 		<!-- Theme used for syntax highlighting of code -->
 		<link rel="stylesheet" href="lib/css/zenburn.css">
@@ -33,7 +34,7 @@
 		<div class="reveal">
             <div class="slides">
                 <section>
-                    <h1>Headless Drupal</h1>
+                    <h1 style="line-height: 0.8"><small>Headless Drupal</small></h1>
                     <h3>en pratique</h3>
                 </section>
 
@@ -41,7 +42,13 @@
                     <h3>Simon Morvan</h3>
 
                     <p>
-                        <code>https://www.drupal.org/u/garphy<br>@simonmorvan</code>
+                        <code>
+                            <i class="fa fa-drupal" aria-hidden="true"></i>
+                            https://www.drupal.org/u/garphy
+                            <br>
+                            <i class="fa fa-twitter" aria-hidden="true"></i>
+                            @simonmorvan
+                        </code>
 
                     </p>
                     <br><br>
@@ -51,6 +58,35 @@
                         <a href="http://www.icilalune.com/">http://www.icilalune.com/</a>
                     </p>
                 </section>
+
+                <section>
+                    <section>
+
+                    <h1>Headless ?</h1>
+
+                    </section>
+
+                    <section>
+                        <h2>Drupal</h2>
+                        <ul>
+                            <li class="fragment">Modèle de données</li>
+                            <li class="fragment">Logique, Contrôle</li>
+                            <li class="fragment">Interface visuelle</li>
+                        </ul>
+                    </section>
+
+                    <section>
+                        <h2>Headless Drupal</h2>
+                        <ul>
+                            <li>Modèle de données</li>
+                            <li>Logique, Contrôle</li>
+                            <li><span class="fragment strike">Interface visuelle</span>
+                                <span class="fragment fade-up">API</span></li>
+                        </ul>
+                    </section>
+
+                </section>
+
             </div>
         </div>
 
