@@ -1,0 +1,13 @@
+version: "2"
+services:
+  node:
+    image: node:8
+    command: npm start
+    environment:
+      - NPM_CONFIG_USERCONFIG=/project/etc/docker-compose/npmrc
+    network_mode: host
+    user: ${LOCAL_USER}
+    volumes:
+      - .:/project
+      - ~/.npm:/.npm
+    working_dir: /project
