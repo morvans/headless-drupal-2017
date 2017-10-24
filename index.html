@@ -1,5 +1,5 @@
 <!doctype html>
-<html>
+<html xmlns="http://www.w3.org/1999/html">
 	<head>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
@@ -28,6 +28,18 @@
                 border: none;
                 box-shadow: none;
             }
+
+            img.fragment.highlight-blue.visible {
+                border-color: #1b91ff;
+            }
+
+            .force-highlight-blue.visible{
+                color: #1b91ff;
+            }
+
+            .reveal h1{
+                font-size: 3em;
+            }
         </style>
 	</head>
 	<body>
@@ -35,7 +47,7 @@
             <div class="slides">
                 <section>
                     <h1 style="line-height: 0.8"><small>Headless Drupal</small></h1>
-                    <h3>en pratique</h3>
+                    <h3 style="line-height: 0.1">en pratique</h3>
                 </section>
 
                 <section>
@@ -57,39 +69,17 @@
                         <br>
                         <a href="http://www.icilalune.com/">http://www.icilalune.com/</a>
                     </p>
+
                 </section>
 
                 <section>
-                    <section>
-                        <h1>Headless ?</h1>
-                        <small>[hɛ́dləs]</small>
-                    </section>
-
-                    <section>
-                        <h2>Drupal</h2>
-                        <ul>
-                            <li class="fragment">Modèle de contenu</li>
-                            <li class="fragment">Logique, Contrôle</li>
-                            <li class="fragment">Interface visuelle</li>
-                        </ul>
-                    </section>
-
-                    <section>
-                        <h2>Headless Drupal</h2>
-                        <ul>
-                            <li>Modèle de contenu</li>
-                            <li>Logique, Contrôle</li>
-                            <li><span class="fragment strike">Interface visuelle</span>&nbsp;<span class="fragment fade-up">&#x2B6C;&nbsp;API</span></li>
-                        </ul>
-                    </section>
-
-                    <section>
-                        Todo: Schéma
-                    </section>
-
-                    <section>
-                        Todo: Solutions similaires, en SaaS, ...
-                    </section>
+                    <h1>Headless ?</h1>
+                    <small>[hɛ́dləs]</small>
+                    <aside class="notes">
+                        Comment faire un site web dont l'interface utilisateur ne se recharge pas intégralement à chaque clic et dont les contenus sont dans Drupal ?
+                        Peut-on concevoir une application native alimentée par des contenus gérés avec Drupal ?
+                        Proposer une immersion sonore, une immersion 3D
+                    </aside>
                 </section>
 
                 <section>
@@ -99,18 +89,110 @@
                     </section>
 
                     <section>
-                        <h2>Connexions</h2>
+                        <img class="img-raw" src="media/drupal%208%20logo%20isolated%20CMYK%2072.png" style="float:left;">
+                        <h3>Pourquoi Drupal ?</h3>
+                        <ul>
+                            <li class="fragment">Modélisation du contenu</li>
+                            <li class="fragment">Richesse fonctionnelle</li>
+                            <li class="fragment">Multilingue</li>
+                            <li class="fragment">E-commerce</li>
+                            <li class="fragment">Communauté</li>
+                            <li class="fragment">Back-office</li>
+                            <li class="fragment">...</li>
+                        </ul>
+                        <aside class="notes">
+                            Pourquoi utilise t'on Drupal ?
+                            - un des meilleurs CMS opensource pour
+                        </aside>
+                    </section>
+
+                    <section>
+                        <h3>UX</h3>
+                        <aside class="notes">
+                            Avec quelle interface ?
+                            - couche de theming = interaction entre Drupal et un utilisateur via un navigateur
+                            - puissante, flexible, couvre un grand nombre de use case en production
+                        </aside>
+                    </section>
+
+                    <section>
+                        <img class="fragment" width="150" src="media/angular.svg">
+                        <img class="fragment" width="150" src="media/logo.svg">
+                        <img class="fragment" width="150" src="media/Adobe-Flash-Logo.png">
+                        <aside class="notes">
+                            que faire
+                            si développer un theme ne permet pas d'atteindre l'UX visée
+                            qu'on souhaite utiliser une technlogie alternative
+                        </aside>
+                    </section>
+
+                    <section>
+                        <img class="fragment" height="250" src="media/IMG_0969.JPG">
+                        <img class="fragment" height="250" src="media/81rm4fkCT2L._SL1500_.jpg">
+                        <img class="fragment" height="250" src="media/amazon_b00x4whp5e_echo_1187819.jpg">
+                        <aside class="notes">
+                            que faire
+                            si l'interaction n'est pas proposée à travers un navigateur web
+                        </aside>
+                    </section>
+
+                    <section>
+                        <h2>Canaux multiples</h2>
                         <span class="fragment">Exploiter le contenu hors de Drupal</span>
                         <ul>
                             <li class="fragment">Web</li>
                             <li class="fragment">Applications</li>
                             <li class="fragment">Diffusion automatique</li>
-                            <li class="fragment">...</li>
+                            <li class="fragment">IoT, AR, ...</li>
                         </ul>
                     </section>
 
                     <section>
-                        <h2>Exemples</h2>
+                        <h2>Différents composants</h2>
+                        <ul>
+                            <li class="fragment">Backend: stable, pérenne (investissement) ;</li>
+                            <li class="fragment">Frontend(s): évolutif et rapidement à jour.</li>
+                        </ul>
+                        <p class="fragment">Cycles de développement différents.</p>
+                        <aside class="notes">
+                            séparation des préoccupation
+                        </aside>
+                    </section>
+
+                    <section>
+                        <h2>Choix technologique</h2>
+                        <ul>
+                            <li class="fragment">Angular</li>
+                            <li class="fragment">Ember</li>
+                            <li class="fragment">React</li>
+                            <li class="fragment">Vue.js</li>
+                            <li class="fragment">...</li>
+                        </ul>
+                        <aside class="notes">
+                            avoir le choix pour la couche frontend
+                        </aside>
+                    </section>
+
+                    <section>
+
+                        <img class="fragment" data-fragment-index="0" width="150" src="media/angular.svg">
+                        <img class="fragment" data-fragment-index="1" width="150" src="media/logo.svg">
+                        <img class="fragment" data-fragment-index="2" width="150" src="media/Adobe-Flash-Logo.png">
+                        <br>
+                        <img class="fragment img-raw" height="150" src="media/drupal%208%20logo%20isolated%20CMYK%2072.png">
+                        <br>
+                        <img class="fragment" data-fragment-index="3" height="150" src="media/IMG_0969.JPG">
+                        <img class="fragment" data-fragment-index="4" height="150" src="media/81rm4fkCT2L._SL1500_.jpg">
+                        <img class="fragment" data-fragment-index="5" height="150" src="media/amazon_b00x4whp5e_echo_1187819.jpg">
+
+                    </section>
+
+                </section>
+
+                <section>
+
+                    <section>
+                        <h1>Exemples</h1>
                     </section>
 
                     <section data-background="media/export_PatrickRoger_1.jpg">
@@ -122,6 +204,8 @@
                         </div>
                         <aside class="notes">
                             Webapp corporate & e-commerce
+                            Layout inhabituel, Responsive
+                            FR/EN
                         </aside>
                     </section>
 
@@ -135,6 +219,7 @@
                         <aside class="notes">
                             Plateforme de contenus monétisés
                             Accès payant (drupal commerce)
+                            Expérience back-office custom intégrée au front pour les admin
                         </aside>
                     </section>
 
@@ -146,25 +231,1025 @@
                             </p>
                         </div>
                         <aside class="notes">
+                            Flash + Drupal 6
                             Réalisé en 2010
+                            Rendu 3D (accélération matérielle, via flash)
                         </aside>
                     </section>
 
                     <section data-background="media/icilalune_com.png">
                         <div style="background: rgba(0,0,0,0.8); padding:0.3em">
                             <p>
-                                <small>Drupal 8, Angular 4
+                                <small>Drupal 8, Angular 4, ThreeJS
                                     <br><a href="https://www.icilalune.com">https://www.icilalune.com</a></small>
                             </p>
                         </div>
+                        <aside class="notes">
+                            2017, 3D (WebGL)
+                        </aside>
                     </section>
 
                 </section>
 
                 <section>
 
-                    <h1>Comment ?</h1>
+                    <section>
+                        <h1>Comment ?</h1>
+                    </section>
 
+                    <section>
+                        <h2>Drupal</h2>
+                        <ul>
+                            <li class="fragment">Modèle de contenu</li>
+                            <li class="fragment">Logique, Contrôle</li>
+                            <li class="fragment">Interface visuelle</li>
+                        </ul>
+
+                        <aside class="notes">
+                            Interface visuelle = pages HTML (via theme)
+                            Navigation = requete HTTP, nouvelle page HTML
+                        </aside>
+                    </section>
+
+                    <section>
+                        <h2>Headless Drupal</h2>
+                        <ul>
+                            <li>Modèle de contenu</li>
+                            <li>Logique, Contrôle</li>
+                            <li><span class="fragment strike">Interface visuelle</span>&nbsp;<span class="fragment fade-up">&#x2B6C;&nbsp;API</span></li>
+                        </ul>
+                    </section>
+
+                    <section>
+
+                        <img class="fragment" height="300" src="media/stack_classic.png">
+
+                        <img class="fragment" height="300" src="media/stack_headless.png">
+
+                        <span class="fragment"><img class="fragment highlight-blue" height="300" src="media/stack_hybrid.png"></span>
+
+                    </section>
+
+                    <section>
+                        <h2>Solution SaaS</h2>
+                        <ul>
+                            <li>Contentful</li>
+                            <li>Backendless</li>
+                            <li>GraphCMS</li>
+                            <li>Tchop</li>
+                            <li>...</li>
+                        </ul>
+                        <aside class="notes">
+                            pas de retour d'expérience pour juger ou comparer à drupal
+                            montre l'existence d'une tendance
+                        </aside>
+                    </section>
+
+                    <!--
+                    <section>
+                        <h2>Let's go !</h2>
+                        <ul>
+                            <li class="fragment">Content-type article</li>
+                            <li class="fragment">Vocabulaire de tags</li>
+                            <li class="fragment">WebApp Frontend</li>
+                        </ul>
+                    </section>
+
+                    <section>
+                        schema : liste article + tag cloud
+                    </section>
+
+                    <section>
+                        schema : detail article
+                    </section>
+
+                    <section>
+                        schema montrant Drupal + Frontend avec api au milieu (gauche à droite)
+                    </section>
+                    -->
+
+                </section>
+
+                <section>
+                    <section>
+                        <h1>Architecture</h1>
+                    </section>
+
+                    <section>
+                        <p class="fragment"><small>L'équation headless :</small></p>
+                        <p class="fragment">un projet = deux projets<br><small class="fragment">(voire plus)</small></p>
+                    </section>
+
+                    <section>
+                        <h3>Composants</h3>
+                        <ul>
+                            <li class="fragment">Drupal (+PHP, MySQL)</li>
+                            <li class="fragment">Angular (+Javascript, Sass, Webpack)</li>
+                            <li class="fragment">Node.js (+Javascript, NPM)</li>
+                        </ul>
+                        <aside class="notes">
+                            + déploiement de tous ces composants (docker?)
+                        </aside>
+                    </section>
+
+                    <section>
+                        <h3>Conséquence(s)</h3>
+                        <ul>
+                            <li class="fragment">Prévoir plus de temps</li>
+                            <li class="fragment">Hébergement disparate</li>
+                            <li class="fragment">Autorise un recrutement plus large</li>
+                            <li class="fragment">Permet un certain parallélisme</li>
+                        </ul>
+                        <aside class="notes">
+                            temps: initial mais investitssement coté backend dans la durée
+
+                            paralélisme:
+                            si l'analyse du contenu est OK
+                            si les API sont correctement concues
+                        </aside>
+                    </section>
+                </section>
+
+                <section>
+
+                    <section>
+                        <p>Level #1</p>
+                        <h1>API</h1>
+
+                        <aside class="notes">
+                            - interface avec le logiciel pour tout sauf les humains
+                            - "fonctions" disponibles
+                            - système au sens large : module d'un programme, logiciel, serveur
+                            - ~synonyme de webservice
+                        </aside>
+                    </section>
+
+                    <section>
+                        <h2>API pour Drupal <span class="fragment">8</span></h2>
+                        <ul>
+                            <li class="fragment">REST (core)</li>
+                            <li class="fragment">JSON API</li>
+                            <li class="fragment">GraphQL</li>
+                        </ul>
+                        <p class="fragment"><small>Pour Drupal 7 : Services (& Services Entity)<br>ou RestWS</small></p>
+                    </section>
+
+                    <section>
+                        <h2>REST</h2>
+                        <ul>
+                            <li class="fragment">Core</li>
+                            <li class="fragment">Entity normalizer</li>
+                            <li class="fragment">XML<span class="fragment">, JSON</span><span class="fragment">, ...</span></li>
+                            <li class="fragment">Create, Retrieve, Update, Delete</li>
+                            <li class="fragment">Pas de collections <span class="fragment">&#x2B6C;Views</span></li>
+                        </ul>
+                        <aside class="notes">
+                            expose les entité drupal via les normalizer
+                        </aside>
+                    </section>
+
+                    <section>
+                        <h3>Exemple</h3>
+                        <small><code>/node/3?_format=json</code></small><br>
+                        <small><small><pre><code data-noescape data-trim style="width: 600px">
+{
+    "nid": [
+        {
+            "value": 3
+        }
+    ],
+    "uuid": [
+        {
+            "value": "a75a24f1-241a-4e77-9e2e-903e5f5f8563"
+        }
+    ],
+    "vid": [
+        {
+            "value": 3
+        }
+    ],
+    "langcode": [
+        {
+            "value": "en"
+        }
+    ],
+    "type": [
+        {
+            "target_id": "container",
+            "target_type": "node_type",
+            "target_uuid": "1e009f03-6fc7-456f-8ce6-e2d911860b59"
+        }
+    ],
+    "revision_timestamp": [
+        {
+            "value": "2017-09-14T14:25:09+00:00",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "revision_uid": [
+        {
+            "target_id": 1,
+            "target_type": "user",
+            "target_uuid": "a3015686-d17a-44db-8231-c4a77fab44b9",
+            "url": "/user/1"
+        }
+    ],
+    "revision_log": [],
+    "status": [
+        {
+            "value": true
+        }
+    ],
+    "title": [
+        {
+            "value": "test"
+        }
+    ],
+    "uid": [
+        {
+            "target_id": 1,
+            "target_type": "user",
+            "target_uuid": "a3015686-d17a-44db-8231-c4a77fab44b9",
+            "url": "/user/1"
+        }
+    ],
+    "created": [
+        {
+            "value": "2017-09-14T14:25:09+00:00",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "changed": [
+        {
+            "value": "2017-09-14T14:25:09+00:00",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "promote": [
+        {
+            "value": false
+        }
+    ],
+    "sticky": [
+        {
+            "value": false
+        }
+    ],
+    "default_langcode": [
+        {
+            "value": true
+        }
+    ],
+    "revision_translation_affected": [
+        {
+            "value": true
+        }
+    ],
+    "container_children": [
+        {
+            "target_id": 5,
+            "target_type": "node",
+            "target_uuid": "dadef8de-ed44-47d1-85cf-0d20c05475f2",
+            "url": "/node/5"
+        },
+        {
+            "target_id": 7,
+            "target_type": "node",
+            "target_uuid": "7ede38bd-0a69-4877-98b4-bea441ddef5b",
+            "url": "/node/7"
+        }
+    ],
+    "content_translation_source": [
+        {
+            "value": "und"
+        }
+    ],
+    "content_translation_outdated": [
+        {
+            "value": false
+        }
+    ],
+    "body": [],
+    "field_content_parent": [],
+    "field_content_weight": [],
+    "field_labels": [],
+    "field_properties": []
+}
+                        </code></pre></small></small>
+                    </section>
+
+                    <section>
+                        <h3>Chemins d'accès REST</h3>
+                        <ul>
+                            <li class="fragment" data-fragment-index="0"><code>GET /node/[id]<span class="fragment">?_format=json</span></code><br>
+                            <code>(ou PATCH, DELETE)</code></li>
+                            <li class="fragment" data-fragment-index="1"><code>POST /entity/node<span class="fragment">?_format=json</span></code></li>
+                        </ul>
+                        <p class="fragment">Corrigé à partir de Drupal 8.4<br><small><code>https://www.drupal.org/node/2293697</code></small>
+                            <br><span class="fragment">...sauf pour les entités User<small><code>https://www.drupal.org/node/2851984</code></small></span></p>
+                    </section>
+
+                    <section>
+                        <h3>Views REST export</h3>
+                        <img height="400" src="media/restviews.png">
+                        <small><code>GET /rest/node<span class="fragment">?_format=json</span></code></small>
+                    </section>
+
+                    <section>
+                        <h3>Des issues qui restent</h3>
+                        <ul>
+                            <li>File</li>
+                            <li>Test coverage</li>
+                            <li>Cache</li>
+                            <li>Authentication</li>
+                            <li>...</li>
+                        </ul>
+                    </section>
+
+                    <section>
+                        <img class="img-raw" src="media/logo.svg" width="10%"/>
+                        <h2>GraphQL</h2>
+                        <p><span class="fragment">A query language for your API</span>
+                            <br><span class="fragment"><code>http://graphql.org/</code></span></p>
+                        <p><span class="fragment"><code><small>https://www.drupal.org/project/graphql</small></code></span></p>
+                        <p class="fragment">Beta!</p>
+                    </section>
+
+                    <section>
+                        <p>Query</p>
+                         <pre><code data-trim data-noescape>
+                        {
+                            hero {
+                                name
+                                height
+                                mass
+                            }
+                        } </code></pre>
+                        <p>Result</p>
+                             <pre><code data-trim data-noescape>
+                        {
+                            "hero": {
+                                "name": "Luke Skywalker",
+                                "height": 1.72,
+                                "mass": 77
+                            }
+                        }
+                         </code></pre>
+                    </section>
+
+                    <section>
+                        <img class="img-raw" src="media/jsonapi.png" width="50%" style="background: lightgray">
+                        <p><span class="fragment">A specification for building APIs in JSON</span>
+                            <br><span class="fragment"><em>&laquo;your anti-bikeshedding tool&raquo;</em></span>
+                            <br><span class="fragment"><code>http://jsonapi.org/</code></span></p>
+                            <p><span class="fragment"><code>https://www.drupal.org/project/jsonapi</code></span></p>
+                    </section>
+
+                    <section>
+                        <h3>JSON API</h3>
+                        <ul>
+                            <li>CRUD</li>
+                            <li>Collection (filtrage, pagination)</li>
+                            <li>Inclusion des références</li>
+                        </ul>
+                    </section>
+
+                    <section>
+                        <h2>JSON API &#11012; Drupal</h2>
+                        <ul>
+                            <li class="fragment">Attributs <span class="fragment">&#x2B6C; Fields</span></li>
+                            <li class="fragment">Relations <span class="fragment">&#x2B6C; Entity Reference</span></li>
+                            <li class="fragment">Collections <span class="fragment">&#x2B6C; <span style="text-decoration: line-through;">Views</span></span></li>
+                        </ul>
+                    </section>
+
+                    <section>
+
+                        <h3>Typage</h3>
+                        <ul>
+                            <li class="fragment">Type: Entity Type + Bundle<br>
+                                <small>Notation: <code>node--article</code></small>
+                            </li>
+                            <li class="fragment">Deux content-types: deux types<br>
+                                <small><code>/jsonapi/node/article</code></small>
+                            </li>
+                            <li class="fragment">Pas de collection pour plusieurs types<br>
+                                <small><code>https://www.drupal.org/node/2886540</code></small></li>
+                        </ul>
+                    </section>
+
+                    <section>
+                        <h2>Entité</h2>
+                        <code>/jsonapi/node/article/42</code>
+                        <pre><code data-trim data-noescape>
+                            {
+                                "data": {
+                                    "type": "node--article",
+                                    "id": "42",
+                                    "attributes": {
+                                        "title": "First node",
+                                        "created": 2147483647
+                                    },
+                                    "relationships": {
+                                        "author": {
+                                            "data": { "type": "user--user", "id": "9" }
+                                        }
+                                    },
+                                }
+                            }
+                    </code></pre>
+                    </section>
+
+                    <section>
+                        <h2>Collection</h2>
+                        <code>/jsonapi/node/article</code>
+                        <pre><code data-trim data-noescape class="json">
+                            {
+                                "data": [
+                                    {
+                                        "type": "node--article",
+                                        "id": "42",
+                                        "attributes": {...}
+                                    },
+                                    {
+                                        "type": "node--article",
+                                        "id": "84",
+                                        "attributes": {...}
+                                    }
+                                ]
+                            }
+                    </code></pre>
+                    </section>
+
+                    <section>
+                        <h2>Inclusions</h2>
+                        <small><code>/api/node/product/4<span class="fragment force-highlight-blue" data-fragment-index="1">?include=field_category</span></code></small>
+                        <pre style="font-size: 0.9rem"><code data-trim data-noescape class="json">
+                            {
+                                "data": {
+                                    "id": 4,
+                                    "type": "node--product",
+                                    "attributes": ...,
+                                    "relationships": {
+                                       <span class="fragment highlight-green" data-fragment-index="0">"field_category"</span>:{
+                                          "data":{
+                                             "type":"taxonomy_term--category",
+                                             "id":"3"
+                                          }
+                                       }
+                                    }
+                                }<span class="fragment" data-fragment-index="2">,
+                                <span class="force-highlight-blue visible">"included"</span>: [{
+                                    "id": 3,
+                                    "type": "taxonomy_term--category",
+                                    "attributes": {
+                                        "name": "Drupalcamp goodies",
+                                        ...
+                                    }
+                                }]</span>
+                            }
+                    </code></pre>
+                    </section>
+
+                    <section>
+                        <h2>Filtres</h2>
+
+                                                <pre><code data-trim data-noescape style="width: 900px">
+                        GET /jsonapi/node/article?
+                             filter[published][condition][path]=status
+                            &filter[published][condition][value]=1
+                            &filter[published][condition][operator]=%3D // URL encoded "="
+                        </code></pre>
+
+                        <br>
+
+                        <pre><code data-trim data-noescape style="width: 900px">
+                        GET /jsonapi/node/product?
+                             filter[published][condition][path]=field_category.id
+                            &filter[published][condition][value]=42
+                            &filter[published][condition][operator]=%3D // URL encoded "="
+                        </code></pre>
+
+                    </section>
+
+                    <section>
+                        <h2>Documentation</h2>
+
+                        <small><code>https://www.drupal.org/docs/8/modules/json-api</code></small>
+                    </section>
+
+                    <section>
+
+                        !!!!!!!!!!!!!
+
+                        Reprendre le schema de l'interface avec la liste des article
+                        montreer l'URL qui donne la liste des articles
+                        montreer l'URL qui donne la liste des tags
+                        montrer l'URL qui donne un article (inclure les tags)
+
+                        montrer un fragment de template angular avec un ngFor
+
+                    </section>
+
+                    <section>
+
+                        !!!!!!!!!!!!!
+
+                        MODEL : !body html => paragaph
+                    </section>
+
+                    <section>
+                        <p>Level #1</p>
+                        <h1>API</h1>
+                        <p class="fragment"><br><i class="fa fa-star-o" aria-hidden="true"></i>Level Complete!<i class="fa fa-star-o" aria-hidden="true"></i></p>
+
+                        <aside class="notes">
+                            REST, JSON API, GraphQL, ...<br>
+                            permettent de récupérer les données à exploiter
+                        </aside>
+                    </section>
+
+                </section>
+
+                <section>
+                    <section>
+                        <p>Level #2</p>
+                    <h1>Navigation</h1>
+
+                        <!--
+                        introduir ele temre SPA quelque spart
+                        et PWA aussi
+                        => notion de perfomrance JSON vs HTML rendu
+                        surtout sur mobile
+                        => notion de "app ready"
+
+                        Google,
+                        Bookmarks,
+                        et les réseaux sociaux
+
+
+                    front => #!, history push state
+                    frontend routers
+
+
+                    back => server side rendering
+
+                    -->
+                    </section>
+
+                    <section>
+                        <h2>SPA</h2>
+                        <span class="fragment highlight-blue">Single Page</span> Application
+                        <pre class="fragment"><code data-trim data-noescape>
+
+                            &lt;html&gt;
+                                &lt;body&gt;
+                                    &lt;script src=&quot;app.js&quot;&gt;&lt;/script&gt;
+                                &lt;/body&gt;
+                            &lt;/html&gt;
+
+                    </code></pre>
+
+
+
+                    </section>
+
+                    <section>
+
+                        <h2>Deep linking</h2>
+
+                        <p class="fragment">Chaque contenu devrait avoir sa propre URL</p>
+
+
+                        <ul>
+                            <li class="fragment">Google</li>
+                            <li class="fragment">Bookmarks</li>
+                            <li class="fragment">Précédent/Suivant</li>
+                            <li class="fragment">Réseaux sociaux</li>
+                        </ul>
+
+                    </section>
+
+                    <section>
+
+                        <h2>Techniques</h2>
+
+                        <ul>
+                            <li class="fragment" data-fragment-index="0">
+                                <span class="fragment strike" data-fragment-index="4">
+                                    URL Fragment
+                                    <br>
+                                    <span class="fragment" data-fragment-index="1"><small><code>
+                                        https://www.escapefactory.fr/#<span class="fragment highlight-blue" data-fragment-index="2">!/fr/news/halloween</span>
+                                    </code></small></span><br><span class="fragment" data-fragment-index="3"><small><code>
+                                        &lt;a href=&quot;#!/fr/bowling/20-pistes-de-bowling&quot;&gt;Bowling&lt;/a&gt;
+                                    </code></small></span>
+                                </span>
+                            </li>
+                            <li class="fragment">
+                                History API
+                                <br>
+                                <span class="fragment"><small><code>https://www.icilalune.com/<span class="fragment highlight-blue">fr/articles</span></code></small></span>
+                                <br>
+                                <span class="fragment"><small><code>history.pushState({}, "Articles", "/fr/articles")</code></small></span>
+                            </li>
+                        </ul>
+
+                        <aside class="notes">
+                            Comment procéder pour que l'URL change sans rechargement de la page
+                        </aside>
+
+                    </section>
+
+                    <section>
+
+                        <h3>Routing</h3>
+
+                        <pre class="fragment"><code data-trim data-noescape>
+                            const appRoutes: Routes = [
+                              { path: 'news/:id',  component: NewsDetailComponent },
+                              { path: 'news',      component: NewsListComponent },
+                              { path: '',          redirectTo: '/news' },
+                              { path: '**',        component: PageNotFoundComponent }
+                            ];</code></pre>
+
+                        <p class="fragment">Fonctionnment par motif</p>
+
+                        <ul>
+                            <li class="fragment"><i class="fragment fa fa-smile-o" aria-hidden="true"></i> Définit les états</li>
+                            <li class="fragment"><i class="fragment fa fa-smile-o" aria-hidden="true"></i> Modélise les paramètres</li>
+                            <li class="fragment"><i class="fragment fa fa-frown-o" style="color: #ff2c2d; " aria-hidden="true"></i> Couplage avec l'URL</li>
+                        </ul>
+                    </section>
+
+                    <section>
+
+                        <h3>From scratch</h3>
+
+                        <img class="fragment" data-fragment-index="1" width="212" src="media/maria-mongo.png">
+                        <img class="fragment" data-fragment-index="3" width="224" src="media/sf-node.png">
+                        <span class="fragment " data-fragment-index="5"><img class="fragment  highlight-blue"  width="250" src="media/angular-react.png"></span>
+
+                        <ul>
+                            <li class="fragment" data-fragment-index="2">DB: PK 42</li>
+                            <li class="fragment" data-fragment-index="4">API: /api/article/42</li>
+                            <li class="fragment" data-fragment-index="6">Web: https://(...)/news/42</li>
+                        </ul>
+
+                    </section>
+
+                    <section>
+
+                        <h3>Drupal backend</h3>
+                        <span class="fragment" data-fragment-index="0">
+                        <img width="158"  class="fragment highlight-blue" src="media/drupal8.png">
+                        <img width="250" src="media/angular-react.png">
+                        </span>
+                        
+                        <br>
+                        
+                        <img class="fragment" data-fragment-index="2" width="650" src="media/path-config.png">
+
+                    </section>
+
+                    <section>
+
+                        <h3>Drupal backend</h3>
+                        <span class="fragment" data-fragment-index="0">
+                        <img width="158"  class="fragment highlight-blue" src="media/drupal8.png">
+                        <img width="250" src="media/angular-react.png">
+                        </span>
+
+                        <br>
+
+                        <img class="fragment" data-fragment-index="2" width="650" src="media/path-config.png">
+
+                    </section>
+
+                    <section>
+
+                        <h3><span class="fragment highlight-blue">Content</span> Management System</h3>
+
+                        <p class="fragment">L'URL désigne le contenu.</p>
+
+                        <p class="fragment">L'URL doit être stable.</p>
+
+                        <p class="fragment">L'URL est une propriété du contenu.</p>
+
+                        <aside class="notes">
+                            L'URL représente le contenu, pas l'état de l'application.
+
+                            L'URL doit être stable et indépendante de la représentation.
+
+                            CMS => L'URL est une propriété du contenu
+
+                        </aside>
+
+                    </section>
+
+                    <section>
+                        <h3>Problématique</h3>
+
+                        <p class="fragment" data-fragment-index="0"><small><code>https://www.icilalune.com/fr/<span class="fragment highlight-blue" data-fragment-index="3">articles</span>/<span class="fragment highlight-green" data-fragment-index="8">2017/04/objectif-montreal</span></code></small></p>
+                        <p class="fragment" data-fragment-index="10"><small><code>https://www.icilalune.com/fr/breaking-news</code></small></p>
+
+                        <ul>
+                            <li class="fragment" data-fragment-index="1">Activer le bon contexte ("newsDetail")</li>
+                            <li class="fragment" data-fragment-index="2">Charger le bon contenu (nid = 42)</li>
+                        </ul>
+
+                    </section>
+
+                    <section>
+                        <h3>Résolution de l'URL</h3>
+
+                        <ul>
+                            <li>Contextes indépendants de l'URL</li>
+                            <li>Service (API) spécialisé</li>
+                        </ul>
+
+                        <aside class="notes">
+                            rendre la définition des contextes indépendantes du format des URL
+                        </aside>
+
+                    </section>
+
+
+
+                    <section>
+
+                        <h3>Routing, revisité</h3>
+
+                        <p>Pour Angular et React : UI-Router</p>
+
+                        <p><code>https://ui-router.github.io/</code></p>
+                    </section>
+                    <section>
+                        <h3>Etats de l'application</h3>
+                        <small><pre><code data-trim data-noescape style="width: 500px; max-height: 450px;">
+                        export const STATES: any[] = [
+                          {
+                            name: 'front',
+                            component: FrontPageComponent,
+                            params: {
+                              id: {
+                                type: 'string'
+                              }
+                            }
+                          },
+                          {
+                            name: 'newsList',
+                            component: NewsListComponent
+
+                          },
+                          {
+                            name: 'newsDetails',
+                            component: NewsDetailComponent,
+                            params: {
+                              id: {
+                                type: 'string'
+                              }
+                            },
+                          }]</code></pre></small>
+
+                    </section>
+
+
+                    <section>
+                        <h3>Path request</h3>
+
+                        <small><small><code class="fragment">https://backend.icilalune.com/api<span class="fragment">/path<span class="fragment">?path=/fr/articles/2017/04/objectif-montreal</span></span>
+                        </code></small></small>
+
+                        <p class="fragment"><small>Module Services</small></p>
+
+                        <small><pre><code data-trim data-noescape class="fragment" style="width: 700px; max-height: 450px;">
+                            $provided_path = $request->query->get('path');
+                            $provided_path_request = Request::create($provided_path);
+
+                            $route = $router->matchRequest($provided_path_request);
+
+                            if(preg_match('/^entity\.([a-zA-Z0-9_]+)\.canonical$/', $route['_route'])){
+
+                              $entity_key = preg_replace('/^entity\.([a-zA-Z0-9_]+)\.canonical$/', '\1',
+                                    $route['_route']);
+                              $entity = $route[$entity_key];
+
+                              $result['entity'] = [
+                                'type' => $entity->getEntityTypeId(),
+                                'id' => $entity->id(),
+                                'uuid' => $entity->uuid(),
+                                'bundle' => $entity->bundle(),
+                              ];
+
+                            }
+                        </code></pre></small>
+
+                    </section>
+
+                    <section>
+                        <h3>Path response</h3>
+
+                        <small><small><code>https://backend.icilalune.com/api/path?path=/fr/articles/2017/04/objectif-montreal
+                        </code></small></small>
+
+                        <small><pre><code data-trim data-noescape class="fragment" style="width: 600px; max-height: 450px;">
+                            {
+                                "language":"fr",
+                                "frontPage":false,
+                                "entity":{
+                                    "type":"node",
+                                    "id":"33",
+                                    "uuid":"4affd605-30ee-4169-972c-b4eeb8e0cb89",
+                                    "bundle":"article",
+                                },
+                            }
+                        </code></pre></small>
+
+                    </section>
+
+                    <section>
+                        <h3>Routing, end</h3>
+
+                        <small><pre><code data-trim data-noescape class="fragment" style="width: 600px; max-height: 500px;">
+                            resolvePath(path:string){
+                                httpClient.get('/api/path', {
+                                  params: new HttpParams().set('path', path),
+                                  headers:new HttpHeaders({'Accept':'application/json'})
+                                }).map(pathInfo => {
+                                    if (pathInfo.frontPage) {
+                                        return {
+                                            name: 'front',
+                                            params: {
+                                                id: pathInfo.entity.uuid
+                                            }
+                                        };
+                                    }
+                                    if (pathInfo.entity && pathInfo.entity.type === 'node') {
+                                        switch (pathInfo.entity.bundle) {
+                                            case 'article':
+                                                return {
+                                                    name: 'newsListDetails',
+                                                    params: {
+                                                    id: pathInfo.entity.uuid
+                                                    }
+                                                };
+                                        }
+                                    }
+                                    return {'name': '404'};
+                                }).subscribe(state => {
+                                    this.uiRouter.stateService.go(state.name, state.params);
+                                });
+                            }
+                        </code></pre></small>
+
+                    </section>
+
+                    <section>
+                        <small class="fragment">A la recherche d'une</small>
+                        <h3>Solution générique</h3>
+                        <ul>
+                            <li class="fragment">Côté Drupal<br><small><code>https://www.drupal.org/project/services_path</code></small>
+                                <br><small><i class="fa fa-exclamation-triangle" aria-hidden="true"></i>
+                                    Experimental</small></li>
+                            <li class="fragment">Côté Front : dépend du framework<br>
+                                <small>Module pour angular et ui-router "bientôt"</small></li>
+                        </ul>
+                    </section>
+
+                    <section>
+                        <p>Level #2</p>
+                        <h1>Navigation</h1>
+                        <p class="fragment"><br><i class="fa fa-star-o" aria-hidden="true"></i>Level Complete!<i class="fa fa-star-o" aria-hidden="true"></i></p>
+                    </section>
+
+                </section>
+
+                <section>
+
+                    <section>
+                        <p>Level #3</p>
+                        <h1 style="font-size: 3em">Crawlers</h1>
+                    </section>
+
+                    <section>
+                        <h2>Les crawlers</h2>
+                        <ul>
+                            <li>Google</li>
+                            <li>Facebook</li>
+                            <li>Twitter</li>
+                            <li>...</li>
+                        </ul>
+                    </section>
+
+                    <section>
+                        <h2>cURL</h2>
+                        <code class="fragment">$ curl [url]</code>
+
+                        <pre class="fragment"><code data-noescape="" data-trim>
+                        $ curl http://www.headlessisfun.com/
+                        $ curl http://www.headlessisfun.com/about
+                        $ curl http://www.headlessisfun.com/article/42</code></pre>
+
+                        <pre class="fragment"><code data-trim data-noescape>
+
+                            &lt;html&gt;
+                                &lt;body&gt;
+                                    &lt;script src=&quot;app.js&quot;&gt;&lt;/script&gt;
+                                &lt;/body&gt;
+                            &lt;/html&gt;
+
+                    </code></pre>
+
+                    </section>
+
+                    <section>
+                        DOM html statique
+                        APP
+                        DOM html final
+                    </section>
+
+                    <section>
+                        <h2>Google AJAX Crawling</h2>
+                        <small><code>https://developers.google.com/webmasters/ajax-crawling/docs/specification</code></small>
+                        Proposition, 2009
+                        Dépréciee depuis, mais toujours largement utilisée
+                    </section>
+
+                    <section>
+                        <h2>Prerender.io</h2>
+                        <code>https://github.com/prerender/prerender</code>
+                        NodeJS + PhantomJS
+                        Un navigateur headless...
+                        Le HTML final n'est pas "utilisable"
+                    </section>
+
+                    <section>
+                        <h2>https://en.wikipedia.org/wiki/Progressive_enhancement</h2>
+                    </section>
+
+                    <section>
+                        <h2>Server-side rendering</h2>
+                        pour tous (browsers ET crawlers)
+                        spécifique au framework
+                        pour angular => angular universal
+                        mais problématique du code qui ne tourne pas bien hors browser
+                        !!!!!!!!!!!!!
+                    </section>
+
+                    <section>
+                        <p>Level #3</p>
+                        <h1 style="font-size: 3em">Référencement</h1>
+                        <p class="fragment"><br><i class="fa fa-star-o" aria-hidden="true"></i>Level Complete!<i class="fa fa-star-o" aria-hidden="true"></i></p>
+                    </section>
+
+
+                </section>
+
+
+
+                <section>
+                    <section>
+
+                        <h2>The Headless Game</h2>
+
+                        <ul>
+                            <li class="fragment">Level #1 : L'API</li>
+                            <li class="fragment">Level #2 : La navigation</li>
+                            <li class="fragment">Level #3 : Les crawlers</li>
+                        </ul>
+
+
+                        <aside class="notes">
+
+                            Drupal gère en standard un grand nombre d'aspect d'un site web
+                            routage, alias, redirection
+                            selection du contexte (theme)
+                            metatag
+                            ...
+
+                            Headless = réutiliser la puissance fonctionnelle et le back office
+                            mais nécessite de réimplementer/recabler une quantité non négligeables
+                            d'aspects qui ne sont pas fournit par une solution standardisée
+
+                        </aside>
+
+                    </section>
+
+                    <section>
+                        <h2>Plus loin</h2>
+                        <ul>
+                            <li>Authentification : OAuth2</li>
+                            <li>Refreshless</li>
+                            <li>JSONAPI et/ou GraphQL in core</li>
+                            <li>Sécurisation du back</li>
+                        </ul>
+                    </section>
+
+                </section>
+
+                <section>
+                    <h1>Merci</h1>
                 </section>
 
             </div>
@@ -179,6 +1264,7 @@
 			// - https://github.com/hakimel/reveal.js#dependencies
 			Reveal.initialize({
                 history: true,
+                slideNumber: "c/t",
 				dependencies: [
 					{ src: 'plugin/markdown/marked.js' },
 					{ src: 'plugin/markdown/markdown.js' },
