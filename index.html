@@ -123,6 +123,10 @@
                             que faire
                             si développer un theme ne permet pas d'atteindre l'UX visée
                             qu'on souhaite utiliser une technlogie alternative
+                            PWA:
+                            - performance/réactivité
+                            - optimisations pour mobile
+                            - fonctionnement offline
                         </aside>
                     </section>
 
@@ -739,17 +743,55 @@
                     </section>
 
                     <section>
+                        <h3>Implémentation<br>avec Angular (4)</h3>
+                    </section>
 
-                        !!!!!!!!!!!!!
+                    <section>
 
-                        Reprendre le schema de l'interface avec la liste des article
-                        montreer l'URL qui donne la liste des articles
-                        montreer l'URL qui donne la liste des tags
-                        montrer l'URL qui donne un article (inclure les tags)
+                        <h3>Liste</h3>
 
-                        montrer un fragment de template angular avec un ngFor
+                        <pre><code data-trim data-noescape>
+                        loadNews(){
+                            this.http.get('/jsonapi/node/article?sort=-created')
+                                .subscribe(result => {
+                                    this.nodes = result.data;
+                                });
+                        }
+                        </code></pre>
+
+                        <pre><code data-trim data-noescape>
+                        &lt;ul&gt;
+                            &lt;li *ngFor=&quot;let node of nodes&quot; (click)=&quot;loadNode(node.id)&quot;&gt;
+                                {{node.attributes?.title}}
+                            &lt;/li&gt;
+                        &lt;/ul&gt;
+                        </code></pre>
 
                     </section>
+
+                    <section>
+
+                        <h2>Detail</h2>
+
+                        <pre><code data-trim data-noescape>
+                        loadNode(id){
+                            this.http.get(['/jsonapi/node/article',id].join('/')])
+                                .subscribe(result => {
+                                    this.nodes = result.data;
+                                });
+                        }
+                        </code></pre>
+
+                        <pre><code data-trim data-noescape>
+                        &lt;div&gt;
+                            &lt;h1&gt;{{node?.attributes?.title}}&lt;/h1&gt;
+                            &lt;div [innerHTML]=&quot;node?.body?.value&quot;&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                        </code></pre>
+
+                    </section>
+
 
                     <section>
 
@@ -757,6 +799,20 @@
 
                         MODEL : !body html => paragaph
                     </section>
+
+
+                    <section>
+                        <h2>Distribution Drupal</h2>
+                        <ul>
+                            <li class="fragment">Contenta<br><code>http://www.contentacms.org/</code></li>
+                            <li class="fragment">Reservoir<br><code>https://github.com/acquia/reservoir</code></li>
+                        </ul>
+
+                        <p class="fragment">&#x2B6C;&nbsp;JSON API</p>
+                        <aside class="notes">
+                        </aside>
+                    </section>
+
 
                     <section>
                         <p>Level #1</p>
@@ -1133,13 +1189,14 @@
                     </section>
 
                     <section>
-                        <h2>Les crawlers</h2>
+                        <h2>Crawlers</h2>
                         <ul>
                             <li>Google</li>
                             <li>Facebook</li>
                             <li>Twitter</li>
                             <li>...</li>
                         </ul>
+                        <p class="fragment">A partir de l'URL</p>
                     </section>
 
                     <section>
@@ -1164,24 +1221,79 @@
                     </section>
 
                     <section>
+
+                        <img width="100%" class="img-raw" src="media/browser-rendering.svg">
+
+
+                        <aside class="notes">
+                        <ol>
+                            <li>index.html</li>
+                            <li>app.js</li>
+                            <li>run()</li>
+                            <li>API</li>
+                            <li>DOM</li>
+                        </ol>
+                        </aside>
+
+                       <!--
                         DOM html statique
                         APP
                         DOM html final
+                        -->
+                    </section>
+
+                    <section>
+                        <h2>Prerender</h2>
+                        <code>https://github.com/prerender/prerender</code>
+                        <ul>
+                            <li>Node.js</li>
+                            <li>PhantomJS</li>
+                            <li>Execution complète</li>
+                            <li>DOM.toString()</li>
+                        </ul>
+
+                        <!--
+                        NodeJS + PhantomJS
+                        Un navigateur headless...
+                        Le HTML final n'est pas "utilisable"
+                        -->
+                    </section>
+
+                    <section>
+                        <img class="img-raw" width="100%" src="media/prerender1.svg">
+                    </section>
+
+                    <section data-transition="none">
+                        <img class="img-raw" width="100%" src="media/prerender2.svg">
+                    </section>
+
+
+                    <section>
+                        <h2>Prerender</h2>
+
+                        <ul>
+                            <li>Solution générique</li>
+                            <li>Résultat statique</li>
+                            <li>Browser ou bot ?</li>
+                        </ul>
                     </section>
 
                     <section>
                         <h2>Google AJAX Crawling</h2>
-                        <small><code>https://developers.google.com/webmasters/ajax-crawling/docs/specification</code></small>
-                        Proposition, 2009
-                        Dépréciee depuis, mais toujours largement utilisée
-                    </section>
 
-                    <section>
-                        <h2>Prerender.io</h2>
-                        <code>https://github.com/prerender/prerender</code>
-                        NodeJS + PhantomJS
-                        Un navigateur headless...
-                        Le HTML final n'est pas "utilisable"
+                        <ul>
+                            <li class="fragment">Proposé en 2009</li>
+                            <li class="fragment">Dépréciée en 2015</li>
+                            <li class="fragment">Toujours largement utilisée</li>
+                        </ul>
+
+                        <pre class="fragment"><code data-trim>
+                        <meta name="fragment" content="!">
+                        </code></pre>
+
+                        <small><code class="fragment">https://www.icilalune.com/<span class="fragment highlight-green">?_escaped_fragment_</span></code></small>
+
+                        <p class="fragment">Pour les autres bots : User-agent</p>
                     </section>
 
                     <section>
@@ -1190,6 +1302,7 @@
 
                     <section>
                         <h2>Server-side rendering</h2>
+
                         pour tous (browsers ET crawlers)
                         spécifique au framework
                         pour angular => angular universal
@@ -1199,14 +1312,12 @@
 
                     <section>
                         <p>Level #3</p>
-                        <h1 style="font-size: 3em">Référencement</h1>
+                        <h1 style="font-size: 3em">Crawlers</h1>
                         <p class="fragment"><br><i class="fa fa-star-o" aria-hidden="true"></i>Level Complete!<i class="fa fa-star-o" aria-hidden="true"></i></p>
                     </section>
 
 
                 </section>
-
-
 
                 <section>
                     <section>
