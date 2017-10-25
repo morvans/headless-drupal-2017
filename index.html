@@ -65,7 +65,7 @@
                     </p>
                     <br><br>
                     <p>
-                        <img class="img-raw" src="media/ill-logo-white-01.svg" width="50%"/>
+                        <img class="img-raw" src="media/logo_full.0ed966a10ff97f46a347.svg" width="50%"/>
                         <br>
                         <a href="http://www.icilalune.com/">http://www.icilalune.com/</a>
                     </p>
@@ -261,7 +261,7 @@
                         <h1>Comment ?</h1>
                     </section>
 
-                    <section>
+                    <section  data-transition="fade">
                         <h2>Drupal</h2>
                         <ul>
                             <li class="fragment">Modèle de contenu</li>
@@ -275,7 +275,7 @@
                         </aside>
                     </section>
 
-                    <section>
+                    <section data-transition="fade">
                         <h2>Headless Drupal</h2>
                         <ul>
                             <li>Modèle de contenu</li>
@@ -336,7 +336,7 @@
 
                 <section>
                     <section>
-                        <h1>Architecture</h1>
+                        <h1>Warning !</h1>
                     </section>
 
                     <section>
@@ -372,6 +372,7 @@
                             si les API sont correctement concues
                         </aside>
                     </section>
+
                 </section>
 
                 <section>
@@ -1279,7 +1280,7 @@
                     </section>
 
                     <section>
-                        <h2>Google AJAX Crawling</h2>
+                        <h3>Google AJAX Crawling</h3>
 
                         <ul>
                             <li class="fragment">Proposé en 2009</li>
@@ -1297,17 +1298,35 @@
                     </section>
 
                     <section>
-                        <h2>https://en.wikipedia.org/wiki/Progressive_enhancement</h2>
+                        <h3>Progressive enhancement</h3>
+
+                        <ul class="fragment">
+                            <li>Prerender généralisé</li>
+                            <li>Résultat dynamique</li>
+                            <li>Dépendant du framework</li>
+                        </ul>
+
                     </section>
 
                     <section>
-                        <h2>Server-side rendering</h2>
+                        <h3>Server-side rendering</h3>
 
-                        pour tous (browsers ET crawlers)
-                        spécifique au framework
-                        pour angular => angular universal
-                        mais problématique du code qui ne tourne pas bien hors browser
-                        !!!!!!!!!!!!!
+                        <ul>
+                            <li class="fragment">Angular Universal</li>
+                            <li class="fragment">Ember fastboot</li>
+                            <li class="fragment">...</li>
+                        </ul>
+
+                    </section>
+
+                    <section>
+                        <h3>Angular Universal</h3>
+                        <small class="fragment"><code>https://github.com/angular/universal#universal-gotchas</code></small>
+                        <ul>
+                            <li><code>window, document, navigator</code></li>
+                            <li>Abstraction du rendu</li>
+                            <li>Requêtes à l'API exécutées deux fois</li>
+                        </ul>
                     </section>
 
                     <section>
@@ -1315,7 +1334,6 @@
                         <h1 style="font-size: 3em">Crawlers</h1>
                         <p class="fragment"><br><i class="fa fa-star-o" aria-hidden="true"></i>Level Complete!<i class="fa fa-star-o" aria-hidden="true"></i></p>
                     </section>
-
 
                 </section>
 
@@ -1348,12 +1366,12 @@
                     </section>
 
                     <section>
-                        <h2>Plus loin</h2>
+                        <h2>Et ensuite...</h2>
                         <ul>
-                            <li>Authentification : OAuth2</li>
-                            <li>Refreshless</li>
-                            <li>JSONAPI et/ou GraphQL in core</li>
-                            <li>Sécurisation du back</li>
+                            <li class="fragment">Authentification : OAuth2</li>
+                            <li class="fragment">Caching</li>
+                            <li class="fragment">JSONAPI et/ou GraphQL in core</li>
+                            <li class="fragment">Sécurisation du back</li>
                         </ul>
                     </section>
 
