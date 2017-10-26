@@ -118,7 +118,7 @@
                     <section>
                         <img class="fragment" width="150" src="media/angular.svg">
                         <img class="fragment" width="150" src="media/logo.svg">
-                        <img class="fragment" width="150" src="media/Adobe-Flash-Logo.png">
+                        <img class="fragment" height="150" src="media/ember-logo-2411236a2ae1734ef2846c0e17bc4ded.png">
                         <aside class="notes">
                             que faire
                             si développer un theme ne permet pas d'atteindre l'UX visée
@@ -142,13 +142,15 @@
 
                     <section>
                         <h2>Canaux multiples</h2>
-                        <span class="fragment">Exploiter le contenu hors de Drupal</span>
                         <ul>
                             <li class="fragment">Web</li>
                             <li class="fragment">Applications</li>
                             <li class="fragment">Diffusion automatique</li>
                             <li class="fragment">IoT, AR, ...</li>
                         </ul>
+                        <aside class="notes">
+                            Des canaux multiples pour exploiter le contenu
+                        </aside>
                     </section>
 
                     <section>
@@ -159,7 +161,10 @@
                         </ul>
                         <p class="fragment">Cycles de développement différents.</p>
                         <aside class="notes">
-                            séparation des préoccupation
+                            <ul>
+                                <li>préoccupations divergeantes</li>
+                                <li>découpage du projet</li>
+                            </ul>
                         </aside>
                     </section>
 
@@ -181,7 +186,7 @@
 
                         <img class="fragment" data-fragment-index="0" width="150" src="media/angular.svg">
                         <img class="fragment" data-fragment-index="1" width="150" src="media/logo.svg">
-                        <img class="fragment" data-fragment-index="2" width="150" src="media/Adobe-Flash-Logo.png">
+                        <img class="fragment" data-fragment-index="2" height="150" src="media/ember-logo-2411236a2ae1734ef2846c0e17bc4ded.png">
                         <br>
                         <img class="fragment img-raw" height="150" src="media/drupal%208%20logo%20isolated%20CMYK%2072.png">
                         <br>
@@ -227,6 +232,7 @@
                         </aside>
                     </section>
 
+                    <!--
                     <section data-background="media/ASA_screenshot_black.jpg">
                         <div style="background: rgba(0,0,0,0.8); padding:0.3em">
                             <p>
@@ -240,6 +246,7 @@
                             Rendu 3D (accélération matérielle, via flash)
                         </aside>
                     </section>
+                    -->
 
                     <section data-background="media/icilalune_com.png">
                         <div style="background: rgba(0,0,0,0.8); padding:0.3em">
@@ -378,7 +385,7 @@
                 <section>
 
                     <section>
-                        <p>Level #1</p>
+                        <p>#1</p>
                         <h1>API</h1>
 
                         <aside class="notes">
@@ -390,7 +397,7 @@
                     </section>
 
                     <section>
-                        <h2>API pour Drupal <span class="fragment">8</span></h2>
+                        <h3>API pour Drupal <span class="fragment">8</span></h3>
                         <ul>
                             <li class="fragment">REST (core)</li>
                             <li class="fragment">JSON API</li>
@@ -574,8 +581,8 @@
                     <section>
                         <img class="img-raw" src="media/logo.svg" width="10%"/>
                         <h2>GraphQL</h2>
-                        <p><span class="fragment">A query language for your API</span>
-                            <br><span class="fragment"><code>http://graphql.org/</code></span></p>
+                        <p class="fragment"><span>A query language for your API</span>
+                            <br><span><code>http://graphql.org/</code></span></p>
                         <p><span class="fragment"><code><small>https://www.drupal.org/project/graphql</small></code></span></p>
                         <p class="fragment">Beta!</p>
                     </section>
@@ -604,10 +611,10 @@
 
                     <section>
                         <img class="img-raw" src="media/jsonapi.png" width="50%" style="background: lightgray">
-                        <p><span class="fragment">A specification for building APIs in JSON</span>
-                            <br><span class="fragment"><em>&laquo;your anti-bikeshedding tool&raquo;</em></span>
-                            <br><span class="fragment"><code>http://jsonapi.org/</code></span></p>
-                            <p><span class="fragment"><code>https://www.drupal.org/project/jsonapi</code></span></p>
+                        <p class="fragment"><span>A specification for building APIs in JSON</span>
+                            <br><span><em>&laquo;your anti-bikeshedding tool&raquo;</em></span>
+                            <br><span><code>http://jsonapi.org/</code></span></p>
+                            <p class="fragment"><small><code>https://www.drupal.org/project/jsonapi</code></small></p>
                     </section>
 
                     <section>
@@ -620,7 +627,7 @@
                     </section>
 
                     <section>
-                        <h2>JSON API &#11012; Drupal</h2>
+                        <h3>JSON API &#11012; Drupal</h3>
                         <ul>
                             <li class="fragment">Attributs <span class="fragment">&#x2B6C; Fields</span></li>
                             <li class="fragment">Relations <span class="fragment">&#x2B6C; Entity Reference</span></li>
@@ -633,10 +640,10 @@
                         <h3>Typage</h3>
                         <ul>
                             <li class="fragment">Type: Entity Type + Bundle<br>
-                                <small>Notation: <code>node--article</code></small>
+                                <small class="fragment">Notation: <code>node--article</code></small><br>
+                                <small class="fragment"><code>/jsonapi/node/article</code></small>
                             </li>
                             <li class="fragment">Deux content-types: deux types<br>
-                                <small><code>/jsonapi/node/article</code></small>
                             </li>
                             <li class="fragment">Pas de collection pour plusieurs types<br>
                                 <small><code>https://www.drupal.org/node/2886540</code></small></li>
@@ -644,7 +651,7 @@
                     </section>
 
                     <section>
-                        <h2>Entité</h2>
+                        <h3>Entité</h3>
                         <code>/jsonapi/node/article/42</code>
                         <pre><code data-trim data-noescape>
                             {
@@ -666,7 +673,7 @@
                     </section>
 
                     <section>
-                        <h2>Collection</h2>
+                        <h3>Collection</h3>
                         <code>/jsonapi/node/article</code>
                         <pre><code data-trim data-noescape class="json">
                             {
@@ -687,7 +694,7 @@
                     </section>
 
                     <section>
-                        <h2>Inclusions</h2>
+                        <h3>Inclusion</h3>
                         <small><code>/api/node/product/4<span class="fragment force-highlight-blue" data-fragment-index="1">?include=field_category</span></code></small>
                         <pre style="font-size: 0.9rem"><code data-trim data-noescape class="json">
                             {
@@ -717,9 +724,9 @@
                     </section>
 
                     <section>
-                        <h2>Filtres</h2>
+                        <h3>Filtre</h3>
 
-                                                <pre><code data-trim data-noescape style="width: 900px">
+                        <pre><code data-trim data-noescape style="width: 900px">
                         GET /jsonapi/node/article?
                              filter[published][condition][path]=status
                             &filter[published][condition][value]=1
@@ -735,16 +742,22 @@
                             &filter[published][condition][operator]=%3D // URL encoded "="
                         </code></pre>
 
+                        <aside>
+                            <ul>
+                                <li>filtrage</li>
+                                <li>également tri, pagination</li>
+                            </ul>
+                        </aside>
+
                     </section>
 
                     <section>
-                        <h2>Documentation</h2>
-
+                        <h3>Documentation</h3>
                         <small><code>https://www.drupal.org/docs/8/modules/json-api</code></small>
                     </section>
 
                     <section>
-                        <h3>Implémentation<br>avec Angular (4)</h3>
+                        <h3>Implémentation</h3><br><img  width="150" class="fragment img-raw" src="media/angular.svg">
                     </section>
 
                     <section>
@@ -778,7 +791,7 @@
                         loadNode(id){
                             this.http.get(['/jsonapi/node/article',id].join('/')])
                                 .subscribe(result => {
-                                    this.nodes = result.data;
+                                    this.node = result.data;
                                 });
                         }
                         </code></pre>
@@ -793,17 +806,15 @@
 
                     </section>
 
-
+                    <!--
                     <section>
-
                         !!!!!!!!!!!!!
-
                         MODEL : !body html => paragaph
                     </section>
-
+                    -->
 
                     <section>
-                        <h2>Distribution Drupal</h2>
+                        <h2>Distributions</h2>
                         <ul>
                             <li class="fragment">Contenta<br><code>http://www.contentacms.org/</code></li>
                             <li class="fragment">Reservoir<br><code>https://github.com/acquia/reservoir</code></li>
@@ -816,9 +827,8 @@
 
 
                     <section>
-                        <p>Level #1</p>
+                        <p>#1</p>
                         <h1>API</h1>
-                        <p class="fragment"><br><i class="fa fa-star-o" aria-hidden="true"></i>Level Complete!<i class="fa fa-star-o" aria-hidden="true"></i></p>
 
                         <aside class="notes">
                             REST, JSON API, GraphQL, ...<br>
@@ -830,7 +840,7 @@
 
                 <section>
                     <section>
-                        <p>Level #2</p>
+                        <p>#2</p>
                     <h1>Navigation</h1>
 
                         <!--
@@ -908,7 +918,7 @@
                                 <br>
                                 <span class="fragment"><small><code>https://www.icilalune.com/<span class="fragment highlight-blue">fr/articles</span></code></small></span>
                                 <br>
-                                <span class="fragment"><small><code>history.pushState({}, "Articles", "/fr/articles")</code></small></span>
+                                <span class="fragment"><small><code>history.pushState({}, "Contact", "/fr/contact")</code></small></span>
                             </li>
                         </ul>
 
@@ -948,9 +958,9 @@
                         <span class="fragment " data-fragment-index="5"><img class="fragment  highlight-blue"  width="250" src="media/angular-react.png"></span>
 
                         <ul>
-                            <li class="fragment" data-fragment-index="2">DB: PK 42</li>
+                            <li class="fragment" data-fragment-index="2">Base de donnée: Clé primaire 42</li>
                             <li class="fragment" data-fragment-index="4">API: /api/article/42</li>
-                            <li class="fragment" data-fragment-index="6">Web: https://(...)/news/42</li>
+                            <li class="fragment" data-fragment-index="6">Front: https://fromscratch.wtf/news/42</li>
                         </ul>
 
                     </section>
@@ -965,20 +975,6 @@
                         
                         <br>
                         
-                        <img class="fragment" data-fragment-index="2" width="650" src="media/path-config.png">
-
-                    </section>
-
-                    <section>
-
-                        <h3>Drupal backend</h3>
-                        <span class="fragment" data-fragment-index="0">
-                        <img width="158"  class="fragment highlight-blue" src="media/drupal8.png">
-                        <img width="250" src="media/angular-react.png">
-                        </span>
-
-                        <br>
-
                         <img class="fragment" data-fragment-index="2" width="650" src="media/path-config.png">
 
                     </section>
@@ -1175,9 +1171,8 @@
                     </section>
 
                     <section>
-                        <p>Level #2</p>
+                        <p>#2</p>
                         <h1>Navigation</h1>
-                        <p class="fragment"><br><i class="fa fa-star-o" aria-hidden="true"></i>Level Complete!<i class="fa fa-star-o" aria-hidden="true"></i></p>
                     </section>
 
                 </section>
@@ -1185,8 +1180,16 @@
                 <section>
 
                     <section>
-                        <p>Level #3</p>
+                        <p>#3</p>
                         <h1 style="font-size: 3em">Crawlers</h1>
+                    </section>
+
+                    <section>
+                        <img src="media/google-search.png">
+                    </section>
+
+                    <section>
+                        <img src="media/twitter-share.png">
                     </section>
 
                     <section>
@@ -1202,8 +1205,6 @@
 
                     <section>
                         <h2>cURL</h2>
-                        <code class="fragment">$ curl [url]</code>
-
                         <pre class="fragment"><code data-noescape="" data-trim>
                         $ curl http://www.headlessisfun.com/
                         $ curl http://www.headlessisfun.com/about
@@ -1319,6 +1320,7 @@
 
                     </section>
 
+                    <!--
                     <section>
                         <h3>Angular Universal</h3>
                         <small class="fragment"><code>https://github.com/angular/universal#universal-gotchas</code></small>
@@ -1328,11 +1330,11 @@
                             <li>Requêtes à l'API exécutées deux fois</li>
                         </ul>
                     </section>
+                    -->
 
                     <section>
                         <p>Level #3</p>
                         <h1 style="font-size: 3em">Crawlers</h1>
-                        <p class="fragment"><br><i class="fa fa-star-o" aria-hidden="true"></i>Level Complete!<i class="fa fa-star-o" aria-hidden="true"></i></p>
                     </section>
 
                 </section>
@@ -1372,6 +1374,7 @@
                             <li class="fragment">Caching</li>
                             <li class="fragment">JSONAPI et/ou GraphQL in core</li>
                             <li class="fragment">Sécurisation du back</li>
+                            <li class="fragment">...</li>
                         </ul>
                     </section>
 
